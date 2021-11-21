@@ -21,20 +21,9 @@ app.use(morgan('tiny'))
 app.use(express.urlencoded({urlencoded:false}))
 app.use(express.json());
 
-//set view engine 
-app.set('view engine','ejs')
-// app.set('views',path.resolve(__dirname,"/views/ejs"))
-
-//loading assests
-app.use('/css',express.static(path.resolve(__dirname,"assests/css")))
-app.use('/js',express.static(path.resolve(__dirname,"assests/js")))
-app.use('/img',express.static(path.resolve(__dirname,"assests/img")))
-
 app.use('/',require('./server/routes/router'))
 
-app.set('views',path.join(__dirname,'/views/'))
-
-
+app.use('/auth',require('./server/routes/auth-routes'))
 
 app.listen(port,()=>{
     console.log(`${port} Server Running`);

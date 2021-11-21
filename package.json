@@ -17,6 +17,7 @@
     "express-handlebars": "^6.0.1",
     "handlebars": "^4.7.7",
     "mongoose": "^6.0.13",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "simple-encryptor": "^4.0.0"
   }
 }
