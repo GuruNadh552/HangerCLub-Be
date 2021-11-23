@@ -21,9 +21,10 @@ app.use(morgan('tiny'))
 app.use(express.urlencoded({urlencoded:false}))
 app.use(express.json());
 
-app.use('/',require('./server/routes/router'))
 
 app.use('/auth',require('./server/routes/auth-routes'))
+
+app.use('/user',require('./server/routes/user-routes'))
 
 app.listen(port,()=>{
     console.log(`${port} Server Running`);
