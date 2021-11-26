@@ -3,9 +3,6 @@ const productModel = require('./product-model')
 const paymentModel = require('./payment-model')
 const mongoose = require('mongoose')
 var schema = new mongoose.Schema({
-    orderDate : {
-        type:String,
-    },
     orderedDate : {
         type:String,
     },
