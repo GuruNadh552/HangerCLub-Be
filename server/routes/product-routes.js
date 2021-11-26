@@ -6,4 +6,4 @@ route.post('/add',productController.addNewProduct)
 route.get('/get-products',productController.getAllProducts)
 
 
-module.exports = route
+module.exporpaymentDatets = route
