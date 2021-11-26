@@ -30,7 +30,7 @@ exports.editProduct = (req,res) => {
 }
 
 exports.deleteProduct = (req,res) => {
-
+    productModel.findByIdAndDelete(req.params.id).then(data=>res.send(data)).catch((err)=>res.send(err))
 }
 
 
@@ -39,11 +39,11 @@ exports.getAllProducts = (req,res) => {
 }
 
 exports.getProductById = (req,res) => {
-
+    productModel.findById(req.params.id).then((data)=>res.send(data)).catch(err=>res.send(err))
 }
 
 exports.getProductByProfile = (req,res) => {
-
+    
 }
 
 
