@@ -20,7 +20,7 @@ exports.addItemToCart = (req,res) => {
 
 exports.removeItemFromCart = (req,res) => {
     if(!req.params.id)
-        return res.status(409).send("Kindly Send the Cart Id");
+        return res.status(400).send("Kindly Send the Cart Id");
     cartModel.findByIdAndDelete(req.params.id).then((data)=>{res.status(200).send(data)}).catch((err)=>res.send(err));
 }
 
@@ -28,4 +28,10 @@ exports.getCartItems = (req,res) => {
     if(!req.params.id)
         res.status(400).send("Kindly pAss the User iD")
     cartModel.find({userData:req.params.id}).then(data=>res.send(data)).catch((err)=>res.send(err))
+}
+
+exports.updateCartItemQuantity = (req,res) => {
+    if(!req.params.id && !req.body.quantity)
+        return res.status(401).send({"message":"Kindly Send the Required Fields"});    
+    cartModel.findByIdAndUpdate(id,{quantity:req.body.quantity}).then((data)=>res.send(data)).catch(err=>res.send(err));
 }

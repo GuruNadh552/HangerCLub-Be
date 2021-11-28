@@ -41,13 +41,6 @@
             .catch((err)=>res.status(400).send(err));
     }
 
-    exports.changeMobile = (req,res) => {
-        let id = req.params.id;
-        authModel.findByIdAndUpdate(id,{mobile:req.body.mobile},{useFindAndModify:true}).then((resp)=>{
-            res.status(400).send(resp?resp:'user not found');
-        })
-        .catch((err)=>res.send(err));
-    }
 
     exports.changeEmail = (req,res) => {
         let id = req.params.id;

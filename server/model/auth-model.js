@@ -5,14 +5,12 @@ var schema = new mongoose.Schema({
         required:true
     },
     mobile:{
-        type:String,
+        type:Number,
         required:true,
-        unique:true
     },
     email:{
         type:String,
         required:true,
-        unique:true
     },
     password:{
         type:String,
