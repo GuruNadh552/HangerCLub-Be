@@ -25,18 +25,18 @@ const schema = new mongoose.Schema(
         regular_price : {
             type:Number,
         },
-        images : {
-            type:[String]
-        },
+        images : [{
+            type:String,
+        }],
         isProductInStock : {
             type:Boolean
         },
-        tags:{
-            type:[String]
-        },
-        product_varints: {
-            type: [String]
-        },
+        tags:[{
+            type:String
+        }],
+        product_varints: [{
+            type: String
+        }],
         product_weight : {
             type:Number
         }
