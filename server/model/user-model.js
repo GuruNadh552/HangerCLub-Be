@@ -1,4 +1,3 @@
-const authModel = require('./auth-model')
 const mongoose = require('mongoose')
 var schema = new mongoose.Schema({
     authData : { type: mongoose.Schema.Types.ObjectId, ref:'authModel' },
@@ -14,7 +13,10 @@ var schema = new mongoose.Schema({
             size : String,
             gender : String
         }
-    ]
+    ],
+    favorites : [{
+        product : { type: mongoose.Schema.Types.ObjectId, ref:'productModel' },
+    }]
 })
 
 const userModel = mongoose.model('userModel',schema);

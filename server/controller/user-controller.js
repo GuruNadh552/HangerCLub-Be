@@ -21,3 +21,8 @@ exports.getUserDetails = (req,res) => {
         res.send(data)
     }).catch(err=>res.send(err))
 }
+
+
+exports.addToFavorites = (req,res)=>{
+    userModel.findByIdAndUpdate(req.params.id,{product:req.body.pid}).then((data)=>res.send({"message":"Added to Favorites"})).catch((err)=>res.status(409).send("Not Found"))
+}
